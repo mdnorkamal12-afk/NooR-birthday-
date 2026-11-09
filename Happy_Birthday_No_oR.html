@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday NooR ❤️</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+ min-height:100vh;
+ padding:20px 12px;
+ text-align:center;
+ font-family:Arial,sans-serif;
+ color:white;
+ background:linear-gradient(135deg,#ff758c,#a18cd1,#fbc2eb);
+ overflow-x:hidden;
+}
+
+.card{
+ max-width:440px;
+ margin:25px auto;
+ padding:25px 18px;
+ border:1px solid #ffffff70;
+ border-radius:25px;
+ background:#ffffff25;
+ backdrop-filter:blur(12px);
+ box-shadow:0 10px 35px #7a245755;
+}
+
+h1{margin:15px 0;font-size:29px}
+h2{margin:15px 0}
+p{line-height:1.7;margin:12px 0}
+
+.heart{
+ font-size:70px;
+ animation:beat 1s infinite;
+}
+@keyframes beat{50%{transform:scale(1.2)}}
+
+input{
+ width:95%;
+ padding:14px;
+ margin:10px 0;
+ border:0;
+ border-radius:12px;
+ outline:none;
+ font-size:16px;
+}
+
+button{
+ border:0;
+ border-radius:30px;
+ padding:13px 20px;
+ margin:8px 4px;
+ background:white;
+ color:#e84376;
+ font-size:15px;
+ font-weight:bold;
+ cursor:pointer;
+}
+button:active{transform:scale(.94)}
+.hidden{display:none!important}
+
+.gift{
+ font-size:75px;
+ cursor:pointer;
+ margin:20px;
+ animation:beat 1s infinite;
+}
+
+.gallery{
+ display:grid;
+ grid-template-columns:1fr;
+ gap:13px;
+ margin:18px 0;
+}
+.gallery img{
+ width:100%;
+ height:220px;
+ object-fit:cover;
+ border-radius:17px;
+ border:2px solid white;
+}
+
+.message{
+ background:#ffffff30;
+ padding:16px;
+ border-radius:15px;
+ margin-top:15px;
+ line-height:1.8;
+}
+
+.float{
+ position:fixed;
+ bottom:-30px;
+ animation:rise 7s linear forwards;
+ pointer-events:none;
+ z-index:10;
+}
+@keyframes rise{
+ to{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+
+/* BEAUTIFUL TEDDY */
+
+.doll-area{
+ margin-top:30px;
+ padding:15px 0;
+ animation:appear 1s ease;
+ overflow:hidden;
+}
+
+.teddy-stage{
+ position:relative;
+ width:100%;
+ height:440px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+}
+
+.teddy{
+ position:relative;
+ width:280px;
+ height:390px;
+ animation:teddyDance 2.2s ease-in-out infinite;
+ transform-origin:bottom center;
+}
+
+/* EARS */
+.ear{
+ position:absolute;
+ top:8px;
+ width:95px;
+ height:100px;
+ border-radius:50%;
+ background:linear-gradient(135deg,#ffb6ca,#e879a1);
+ border:5px solid #fce0e9;
+ z-index:1;
+}
+.ear.left{left:18px}
+.ear.right{right:18px}
+.ear:after{
+ content:"";
+ position:absolute;
+ width:50px;
+ height:58px;
+ border-radius:50%;
+ background:#ff8eaf;
+ top:16px;
+ left:17px;
+}
+
+/* HEAD */
+.head{
+ position:absolute;
+ z-index:3;
+ top:35px;
+ left:35px;
+ width:210px;
+ height:190px;
+ border-radius:48% 48% 45% 45%;
+ background:linear-gradient(145deg,#ffe0e8,#f5a7bd);
+ box-shadow:inset -10px -12px 18px #df7c9b55,
+ 0 8px 15px #7c345533;
+}
+
+/* EYES */
+.eye{
+ position:absolute;
+ top:76px;
+ width:17px;
+ height:22px;
+ border-radius:50%;
+ background:#49313c;
+}
+.eye.left{left:53px}
+.eye.right{right:53px}
+
+.eye:after{
+ content:"";
+ position:absolute;
+ top:3px;
+ left:4px;
+ width:6px;
+ height:6px;
+ background:white;
+ border-radius:50%;
+}
+
+/* CHEEKS */
+.cheek{
+ position:absolute;
+ top:108px;
+ width:35px;
+ height:18px;
+ border-radius:50%;
+ background:#f58fa9;
+ opacity:.7;
+}
+.cheek.left{left:20px}
+.cheek.right{right:20px}
+
+/* MUZZLE */
+.muzzle{
+ position:absolute;
+ width:75px;
+ height:57px;
+ background:#fff0e9;
+ border-radius:50%;
+ top:112px;
+ left:68px;
+}
+.nose{
+ position:absolute;
+ top:119px;
+ left:100px;
+ width:19px;
+ height:14px;
+ background:#593d4a;
+ border-radius:50% 50% 55% 55%;
+ z-index:2;
+}
+.mouth{
+ position:absolute;
+ top:134px;
+ left:105px;
+ width:10px;
+ height:13px;
+ border-bottom:2px solid #593d4a;
+ border-left:2px solid #593d4a;
+ border-right:2px solid #593d4a;
+ border-radius:0 0 10px 10px;
+ z-index:2;
+}
+
+/* BODY */
+.body-bear{
+ position:absolute;
+ top:190px;
+ left:40px;
+ width:200px;
+ height:185px;
+ border-radius:45% 45% 42% 42%;
+ background:linear-gradient(135deg,#ffd5e1,#ed91ad);
+ box-shadow:inset -10px -12px 18px #d46d9255,
+ 0 10px 15px #7c345533;
+}
+
+/* ARMS */
+.arm{
+ position:absolute;
+ top:213px;
+ width:75px;
+ height:125px;
+ border-radius:50%;
+ background:linear-gradient(135deg,#ffc9d9,#e98ca9);
+ z-index:4;
+}
+.arm.left{
+ left:0;
+ transform:rotate(28deg);
+}
+.arm.right{
+ right:0;
+ transform:rotate(-28deg);
+}
+
+/* FEET */
+.foot{
+ position:absolute;
+ top:330px;
+ width:95px;
+ height:65px;
+ border-radius:50%;
+ background:linear-gradient(135deg,#ffc9d9,#e98ca9);
+ z-index:5;
+}
+.foot.left{left:27px}
+.foot.right{right:27px}
+
+.foot:after{
+ content:"";
+ position:absolute;
+ width:45px;
+ height:25px;
+ background:#fff0e9;
+ border-radius:50%;
+ left:25px;
+ top:22px;
+}
+
+/* HEART MESSAGE */
+.belly-heart{
+ position:absolute;
+ top:238px;
+ left:50%;
+ transform:translateX(-50%);
+ width:150px;
+ height:130px;
+ background:#ff477e;
+ clip-path:path("M75 125 C55 105 0 72 0 37 C0 -5 55 -10 75 25 C95 -10 150 -5 150 37 C150 72 95 105 75 125 Z");
+ z-index:6;
+ filter:drop-shadow(0 4px 5px #ad315b);
+}
+
+.belly-message{
+ position:absolute;
+ top:270px;
+ left:50%;
+ transform:translateX(-50%);
+ width:130px;
+ z-index:7;
+ font-size:16px;
+ font-weight:bold;
+ line-height:1.4;
+ color:white;
+ text-shadow:0 2px 5px #a32450;
+}
+
+/* ANIMATION */
+@keyframes teddyDance{
+ 0%,100%{transform:translateY(0) rotate(-3deg)}
+ 50%{transform:translateY(-18px) rotate(3deg)}
+}
+
+@keyframes appear{
+ from{opacity:0;transform:scale(.5)}
+ to{opacity:1;transform:scale(1)}
+}
+
+.teddy-deco{
+ position:absolute;
+ font-size:25px;
+ animation:deco 2s infinite alternate;
+}
+@keyframes deco{
+ to{transform:translateY(-20px) rotate(20deg)}
+}
+
+footer{margin:25px 0;font-size:13px}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="welcome">
+ <div class="heart">💗</div>
+ <h1>Welcome To Surprise</h1>
+ <p>Before opening your gift, fill in these two things! 🎁</p>
+ <input id="personName" type="text" placeholder="Enter Your Name">
+ <input id="birthdayDate" type="date">
+ <p id="error"></p>
+ <button onclick="confirmDetails()">Confirm 💖</button>
+</div>
+
+<div class="card hidden" id="mainPage">
+ <div class="heart">❤️</div>
+ <h1>Happy Birthday 🎂</h1>
+ <h2>Dear <span id="showName">NooR</span> 💗</h2>
+
+ <p>
+ Today is your special day!<br>
+ May your life always be filled with happiness,
+ love and beautiful memories. ✨
+ </p>
+
+ <p>Birthday Date: <span id="showDate"></span></p>
+
+ <button onclick="openGift()">Open Your Gift 🎁</button>
+
+ <div id="giftSection" class="hidden">
+  <div class="gift" onclick="showSurprise()">🎁</div>
+  <p>Tap the gift to open your surprise! 💝</p>
+ </div>
+
+ <div id="surprise" class="hidden">
+
+  <h2>Some Beautiful Moments 💑</h2>
+
+  <div class="gallery">
+   <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800" alt="Couple holding hands">
+   <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800" alt="Couple together">
+   <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800" alt="Beautiful moment">
+  </div>
+
+  <h2>Special Surprises 💌</h2>
+
+  <button onclick="showMessage(1)">A Special Letter 💌</button>
+  <button onclick="showMessage(2)">Beautiful Memories 🌸</button>
+  <button onclick="showMessage(3)">Birthday Wish 🎂</button>
+  <button onclick="showMessage(4)">Sending Happiness 💖</button>
+  <button onclick="showMessage(5)">One Last Surprise 🎉</button>
+
+  <div id="messageBox" class="message hidden"></div>
+
+  <div style="margin-top:25px">
+   <button onclick="showDoll()" style="background:#ff477e;color:white;font-size:17px;padding:16px 25px">
+    My Last Love Gift 🎀
+   </button>
+  </div>
+
+  <!-- FINAL TEDDY SURPRISE -->
+  <div id="dollArea" class="doll-area hidden">
+
+   <h2>🎀 A Special Gift For NooR 🎀</h2>
+
+   <div class="teddy-stage">
+
+    <span class="teddy-deco" style="top:30px;left:12%">✨</span>
+    <span class="teddy-deco" style="top:100px;right:8%">💗</span>
+    <span class="teddy-deco" style="bottom:30px;left:8%">🌸</span>
+    <span class="teddy-deco" style="bottom:60px;right:10%">💕</span>
+
+    <div class="teddy">
+
+     <div class="ear left"></div>
+     <div class="ear right"></div>
+
+     <div class="head">
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+      <div class="cheek left"></div>
+      <div class="cheek right"></div>
+      <div class="muzzle"></div>
+      <div class="nose"></div>
+      <div class="mouth"></div>
+     </div>
+
+     <div class="body-bear"></div>
+
+     <div class="arm left"></div>
+     <div class="arm right"></div>
+
+     <div class="foot left"></div>
+     <div class="foot right"></div>
+
+     <div class="belly-heart"></div>
+
+     <div class="belly-message">
+      Happy Birthday<br>
+      NooR ❤️
+     </div>
+
+    </div>
+   </div>
+
+   <h2>Lots Of Love & Happiness 💗</h2>
+   <p>A special teddy, just for you! 🧸</p>
+
+  </div>
+ </div>
+</div>
+
+<footer>Made with ❤️ Just for NooR</footer>
+
+<script>
+
+function confirmDetails(){
+ let name=document.getElementById("personName").value.trim();
+ let date=document.getElementById("birthdayDate").value;
+
+ if(name==="" || date===""){
+  document.getElementById("error").innerText=
+  "Please enter your name and birthday date! 💗";
+  return;
+ }
+
+ let formattedDate=new Date(date+"T00:00:00").toLocaleDateString(
+  "en-GB",{day:"numeric",month:"long",year:"numeric"}
+ );
+
+ document.getElementById("showName").innerText=name;
+ document.getElementById("showDate").innerText=formattedDate;
+
+ document.getElementById("welcome").classList.add("hidden");
+ document.getElementById("mainPage").classList.remove("hidden");
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function openGift(){
+ document.getElementById("giftSection").classList.remove("hidden");
+}
+
+function showSurprise(){
+ document.getElementById("surprise").classList.remove("hidden");
+ document.getElementById("surprise").scrollIntoView({behavior:"smooth"});
+}
+
+const messages={
+ 1:"Dear NooR 💌, May every new day bring you peace, happiness and countless reasons to smile. Keep shining! ❤️",
+ 2:"Some moments become beautiful memories. May your life be full of wonderful moments and unforgettable days. 🌸",
+ 3:"Happy Birthday NooR! 🎂 Wishing you a wonderful year filled with success, joy and happiness. 💗",
+ 4:"Sending you lots of smiles, positive energy and warm wishes on your special day. ✨",
+ 5:"Surprise! 🎉 You are special, and today is all about celebrating you. Keep smiling always! ❤️"
+};
+
+function showMessage(number){
+ let box=document.getElementById("messageBox");
+ box.innerText=messages[number];
+ box.classList.remove("hidden");
+ box.scrollIntoView({behavior:"smooth",block:"center"});
+}
+
+function showDoll(){
+ let doll=document.getElementById("dollArea");
+ doll.classList.remove("hidden");
+ doll.scrollIntoView({behavior:"smooth",block:"center"});
+}
+
+const emojis=["❤️","💗","💕","🌸","✨","🌹"];
+
+function createFloat(){
+ const el=document.createElement("div");
+ el.className="float";
+ el.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+ el.style.left=Math.random()*100+"vw";
+ el.style.fontSize=(18+Math.random()*22)+"px";
+ document.body.appendChild(el);
+ setTimeout(()=>el.remove(),7000);
+}
+
+setInterval(createFloat,500);
+
+</script>
+</body>
+</html>
